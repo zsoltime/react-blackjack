@@ -5,7 +5,8 @@
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "react-scripts": "3.1.1"
+    "react-scripts": "3.1.1",
+    "styled-components": "^4.3.2"
   },
   "devDependencies": {
     "cypress": "^3.4.1",
@@ -45,7 +46,23 @@
     "extends": "react-app",
     "plugins": [
       "eslint-plugin-cypress"
-    ]
+    ],
+    "rules": {
+      "no-restricted-imports": [
+        "error",
+        {
+          "paths": [
+            {
+              "name": "styled-components",
+              "message": "Please import from styled-components/macro."
+            }
+          ],
+          "patterns": [
+            "!styled-components/macro"
+          ]
+        }
+      ]
+    }
   },
   "jest": {
     "snapshotSerializers": [
