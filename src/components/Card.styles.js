@@ -12,6 +12,9 @@ export const StyledCard = styled.div`
   line-height: 1;
   margin: 0.5rem;
   position: relative;
+  transform: ${({ rotate, translate }) =>
+    `rotate(${rotate}) translate(${translate})`};
+  user-select: none;
   width: 10rem;
   will-change: transform;
 `;
